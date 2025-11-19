@@ -6,7 +6,7 @@
       "token": "WEComCallbackToken",    // 企业微信的应用回调token
       "encoding_aes_key": "Your43CharEncodingAESKey",    // 企业微信的应用回调aes key
       "api_proxy_url": "",    // 企业微信的自建回调代理
-	  "proxy_url": "",
+	  "proxy_url": "",     // 代理，形如 http://127.0.0.1:7890
       "use_env_proxy": false
     },
     "pansou": {
