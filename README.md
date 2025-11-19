@@ -28,8 +28,8 @@
   - 已创建企业微信“自建应用”，具备“发送消息”接口权限，且可配置消息回调 URL。
   - 宿主环境可访问：
       - https://qyapi.weixin.qq.com（企业微信 API）
-      - Pansou 基础地址（示例：nullbr.eu.org、cilijia.net、www.1lou.pro
-      - （可选）getBT/get115 所需外部站点
+      - Pansou 基础地址
+      - （可选）getBT/get115 所需外部站点  nullbr.eu.org、cilijia.net、www.1lou.pro
   - 准备 config.json，容器运行时挂载到 /app/config.json。
 
   ———
