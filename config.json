@@ -6,7 +6,8 @@
       "token": "WEComCallbackToken",    // 企业微信的应用回调token
       "encoding_aes_key": "Your43CharEncodingAESKey",    // 企业微信的应用回调aes key
       "api_proxy_url": "",    // 企业微信的自建回调代理
-      "use_env_proxy": true
+	  "proxy_url": "",
+      "use_env_proxy": false
     },
     "pansou": {
       "base_url": "http://192.168.1.1:8888",    // 部署的pansou，具体部署见https://github.com/fish2018/pansou，建议部署时启用认证，AUTH_TOKEN_EXPIRY参数设置为24000
@@ -25,11 +26,6 @@
     },
     "magnet": {
       "bt_workers": 4    // 根据机器性能变更，默认不动即可
-    },
-    "proxies": {
-      "http": "",    // 代理设置，值形如 http://127.0.0.1:7890
-      "https": "",
-      "socks": ""
     },
     "app": {
       "host": "0.0.0.0",    // 默认不用变更
