@@ -64,9 +64,9 @@
   ———
 
   ## Docker 直接运行
-  docker run -d --name search-bot \
-    -p 18001:18001 \
-    -v "$(pwd)/config.json:/app/config.json:ro" \
+  docker run -d --name search-bot \  
+      -p 18001:18001 \  
+      -v "$(pwd)/config.json:/app/config.json:ro" \  
     liqman/search-bot:latest
 
   ———
