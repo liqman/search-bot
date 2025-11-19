@@ -21,47 +21,47 @@
   ## 2. 配置文件（config.json）
 
   将以下内容保存为 config.json（请按需填写/修改）：
-
-  {
-    "wecom": {
-      "corp_id": "wwxxxxxxxxxxxxxxxx",    # 企业微信的企业ID
-      "agent_id": 1000002,    # 企业微信的应用AgentID
-      "agent_secret": "YOUR_APP_SECRET",    # 企业微信的应用密钥
-      "token": "WEComCallbackToken",    # 企业微信的应用回调token
-      "encoding_aes_key": "Your43CharEncodingAESKey",    # 企业微信的应用回调aes key
-      "api_proxy_url": "",    # 企业微信的自建回调代理
-      "use_env_proxy": true
-    },
-    "pansou": {
-      "base_url": "http://192.168.1.1:8888",    # 部署的pansou，具体部署见https://github.com/fish2018/pansou，建议部署时启用认证，AUTH_TOKEN_EXPIRY参数设置为24000
-      "token": "YOUR_PANSOU_TOKEN",    # pansou 的token
-      "default_limit": 8,
-      "request_timeout": 15
-    },
-    "features": {
-      "enable_getbt": true,    # 是否开启磁力之家的磁力爬取，资源内容详见https://www.1lou.pro/
-      "enable_get115": true,    # 是否开启nullbr 115网盘资源搜索，开启该选项要填写app_id和api_key，资源内容详见https://nullbr.eu.org/
-      "enable_pianer": false    # 是否开启磁力家的磁力爬取，该资源网站包含9KG，请酌情开启，资源内容详见https://cilijia.net/
-    },
-	"oneonefive": {
-      "app_id": "YOUR_115_APP_ID",    # nullbr的APP_ID，申请见https://nullbr.eu.org/
-      "api_key": "YOUR_115_API_KEY"    # nullbr的API_KEY，申请见https://nullbr.eu.org/
-    },
-    "magnet": {
-      "bt_workers": 4    # 根据机器性能变更，默认不动即可
-    },
-    "proxies": {
-      "http": "",    # 代理设置，值形如 http://127.0.0.1:7890
-      "https": "",
-      "socks": ""
-    },
-    "app": {
-      "host": "0.0.0.0",    # 默认不用变更
-      "port": 18001,    # 项目端口，也是容器内部端口
-      "log_level": "INFO",
-      "default_types": "quark"    # 默认搜索的类型，可填写baidu aliyun quark tianyi uc mobile 115 pikpak xunlei 123 magnet ed2k
-    }
-  }
+  
+  {  
+    "wecom": {  
+      "corp_id": "wwxxxxxxxxxxxxxxxx",    # 企业微信的企业ID  
+      "agent_id": 1000002,    # 企业微信的应用AgentID  
+      "agent_secret": "YOUR_APP_SECRET",    # 企业微信的应用密钥  
+      "token": "WEComCallbackToken",    # 企业微信的应用回调token  
+      "encoding_aes_key": "Your43CharEncodingAESKey",    # 企业微信的应用回调aes key  
+      "api_proxy_url": "",    # 企业微信的自建回调代理  
+      "use_env_proxy": true  
+    },  
+    "pansou": {  
+      "base_url": "http://192.168.1.1:8888",    # 部署的pansou，具体部署见https://github.com/fish2018/pansou，建议部署时启用认证，AUTH_TOKEN_EXPIRY参数设置为24000  
+      "token": "YOUR_PANSOU_TOKEN",    # pansou 的token  
+      "default_limit": 8,  
+      "request_timeout": 15  
+    },  
+    "features": {  
+      "enable_getbt": true,    # 是否开启磁力之家的磁力爬取，资源内容详见https://www.1lou.pro/  
+      "enable_get115": true,    # 是否开启nullbr 115网盘资源搜索，开启该选项要填写app_id和api_key，资源内容详见https://nullbr.eu.org/  
+      "enable_pianer": false    # 是否开启磁力家的磁力爬取，该资源网站包含9KG，请酌情开启，资源内容详见https://cilijia.net/  
+    },  
+	"oneonefive": {  
+      "app_id": "YOUR_115_APP_ID",    # nullbr的APP_ID，申请见https://nullbr.eu.org/  
+      "api_key": "YOUR_115_API_KEY"    # nullbr的API_KEY，申请见https://nullbr.eu.org/  
+    },  
+    "magnet": {  
+      "bt_workers": 4    # 根据机器性能变更，默认不动即可  
+    },  
+    "proxies": {  
+      "http": "",    # 代理设置，值形如 http://127.0.0.1:7890  
+      "https": "",  
+      "socks": ""  
+    },  
+    "app": {  
+      "host": "0.0.0.0",    # 默认不用变更  
+      "port": 18001,    # 项目端口，也是容器内部端口  
+      "log_level": "INFO",  
+      "default_types": "quark"    # 默认搜索的类型，可填写baidu aliyun quark tianyi uc mobile 115 pikpak xunlei 123 magnet ed2k  
+    }  
+  }  
 
   说明：
 
