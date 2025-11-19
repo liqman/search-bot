@@ -1,13 +1,13 @@
 {
     "wecom": {
       "corp_id": "wwxxxxxxxxxxxxxxxx",    // 企业微信的企业ID
-      "agent_id": 1000001,    // 企业微信的应用AgentID
+      "agent_id": 1000002,    // 企业微信的应用AgentID
       "agent_secret": "YOUR_APP_SECRET",    // 企业微信的应用密钥
       "token": "WEComCallbackToken",    // 企业微信的应用回调token
-      "encoding_aes_key": "YourEncodingAESKey",    // 企业微信的应用回调aes key
+      "encoding_aes_key": "Your43CharEncodingAESKey",    // 企业微信的应用回调aes key
       "api_proxy_url": "",    // 企业微信的自建回调代理
       "use_env_proxy": true
-	},
+    },
     "pansou": {
       "base_url": "http://192.168.1.1:8888",    // 部署的pansou，具体部署见https://github.com/fish2018/pansou，建议部署时启用认证，AUTH_TOKEN_EXPIRY参数设置为24000
       "token": "YOUR_PANSOU_TOKEN",    // pansou 的token
@@ -37,4 +37,4 @@
       "log_level": "INFO",
       "default_types": "quark"    // 默认搜索的类型，可填写baidu aliyun quark tianyi uc mobile 115 pikpak xunlei 123 magnet ed2k
     }
-}
+  }
