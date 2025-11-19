@@ -7,7 +7,7 @@
       "encoding_aes_key": "Your43CharEncodingAESKey",    // 企业微信的应用回调aes key
       "api_proxy_url": "",    // 企业微信的自建回调代理
 	  "proxy_url": "",     // 代理，形如 http://127.0.0.1:7890
-      "use_env_proxy": false
+      "use_env_proxy": false  // 建议在配了 api_proxy_url 时关闭
     },
     "pansou": {
       "base_url": "http://192.168.1.1:8888",    // 部署的pansou，具体部署见https://github.com/fish2018/pansou，建议部署时启用认证，AUTH_TOKEN_EXPIRY参数设置为24000
