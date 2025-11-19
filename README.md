@@ -45,7 +45,7 @@
       - enable_getbt：/magnet 是否启用 getBT（优先展示）。
       - enable_get115：/115 是否启用 get115（优先展示）。
       - enable_pianer：是否启用 Pianer 源。
-  - proxies：全局代理配置，若填写 socks 且未设置 http/https，会回退使用 socks。
+  - proxy_url：全局代理配置，若填写 socks 且未设置 http/https，会回退使用 socks。
   - oneonefive：get115-raw API 的 APP 信息（也可通过环境变量 W115_APP_ID/W115_API_KEY 提供）。
   - magnet.bt_workers：getBT 并发抓取线程数。
   - app.port：服务监听端口，需与端口映射一致，并用于企业微信回调。
@@ -78,14 +78,6 @@
   - EncodingAESKey：使用 config.json 的 wecom.encoding_aes_key
   - 模式：推荐“兼容模式”或“安全模式”（本项目支持解密），纯明文也可。
   - 应用“可见范围”需包含目标用户，且应用需具备“发送消息”接口权限。
-
-  ———
-
-  ## 健康检查
-
-  - 服务健康：GET http://主机:18001/health → ok
-  - WeCom Token：GET http://主机:18001/health/wecom → ok token=xxxx...
-  - 主动消息测试：GET http://主机:18001/health/send?user=你的UserID&text=ping
 
   ———
 
@@ -127,34 +119,6 @@
       - 自动应用于 WeCom API、Pansou、get115、getBT 等请求
   - WeCom API 独立代理（wecom.api_proxy_url）：
       - 若仅希望企业微信 API 使用独立代理，可设置该字段（优先级高于全局代理）
-
-  ———
-
-  ## 环境变量（可选覆盖配置）
-
-  - 企业微信：
-      - WECOM_CORP_ID、WECOM_AGENT_ID、WECOM_AGENT_SECRET
-      - WECOM_TOKEN、WECOM_ENCODING_AES_KEY
-      - WECOM_API_PROXY_URL、WECOM_USE_ENV_PROXY（1/true/yes）
-  - 115：
-      - W115_APP_ID、W115_API_KEY
-  - getBT 调优：
-      - BT_CONCURRENCY、BT_SEARCH_NUM
-
-  ———
-
-  ## 常见问题排查
-
-  - 日志出现“检测到加密消息，但解密配置不完整或 wechatpy 未安装”：
-      - 确认容器内存在 /app/config.json 且已配置 wecom.token/encoding_aes_key/corp_id；或通过环境变量提供。
-      - 确认镜像包含 wechatpy 与 pycryptodome（官方镜像已包含）。
-  - 发送失败（WeCom 返回非 0 errcode）：
-      - 确认目标用户在应用“可见范围”内，且应用具备“发送消息”权限。
-      - 确认容器网络可访问 qyapi.weixin.qq.com。
-  - Pansou 401/超时：
-      - 校验 pansou.token、pansou.base_url 与 request_timeout。
-  - 代理问题：
-      - 如需代理，优先配置 wecom.api_proxy_url 或 proxies；若使用系统代理，请设置 wecom.use_env_proxy=true。
 
   ———
 
