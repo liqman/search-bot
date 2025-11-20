@@ -11,7 +11,7 @@
     },
     "pansou": {
       "base_url": "http://192.168.1.1:8888",    // 部署的pansou，具体部署见https://github.com/fish2018/pansou，建议部署时启用认证，AUTH_TOKEN_EXPIRY参数设置为24000
-      "token": "YOUR_PANSOU_TOKEN",    // pansou 的token
+      "token": "YOUR_PANSOU_TOKEN",    // pansou 的token，pansou的docker必须设置AUTH_TOKEN_EXPIRY、AUTH_JWT_SECRET，详见https://github.com/fish2018/pansou
       "default_limit": 8,
       "request_timeout": 15
     },
