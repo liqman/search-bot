@@ -10,8 +10,8 @@
       "use_env_proxy": false  // 建议在配了 api_proxy_url 时关闭
     },
     "pansou": {
-      "base_url": "http://192.168.1.1:8888",    // 部署的pansou，具体部署见https://github.com/fish2018/pansou，建议部署时启用认证，AUTH_TOKEN_EXPIRY参数设置为24000
-      "token": "YOUR_PANSOU_TOKEN",    // pansou 的token，pansou的docker必须设置AUTH_TOKEN_EXPIRY、AUTH_JWT_SECRET，详见https://github.com/fish2018/pansou
+      "base_url": "http://192.168.1.1:8888",    // 部署pansou，具体部署见https://github.com/fish2018/pansou，建议部署AUTH_TOKEN_EXPIRY参数设置为24000，让token长期有效
+      "token": "YOUR_PANSOU_TOKEN",    // pansou 的token，打开pansou后台，依次点击API-搜索API，复制"Authorization Header"下面框中的token值
       "default_limit": 8,
       "request_timeout": 15
     },
