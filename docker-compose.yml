@@ -1,10 +1,10 @@
 version: "3.8"
-  services:
-    search-bot:
-      image: liqman/search-bot:latest
-      container_name: search-bot
-      restart: unless-stopped
-      volumes:
-        - ./config.json:/app/config.json:ro
-      ports:
-        - "18001:18001"
+services:
+  search-bot:
+    image: liqman/search-bot:latest
+    container_name: search-bot
+    restart: unless-stopped
+    volumes:
+      - ./config.json:/app/config.json:ro
+    ports:
+      - "18001:18001"
