@@ -12,7 +12,7 @@
     "pansou": {
       "base_url": "http://192.168.1.1:8888",    // 部署pansou，具体部署见https://github.com/fish2018/pansou，建议部署AUTH_TOKEN_EXPIRY参数设置为24000，让token长期有效
       "token": "YOUR_PANSOU_TOKEN",    // pansou 的token，打开pansou后台，依次点击API-搜索API，复制"Authorization Header"下面框中的token值
-      "default_limit": 8,
+      "default_limit": 5,    //建议不要过大，避免内容截断
       "request_timeout": 15
     },
     "features": {
