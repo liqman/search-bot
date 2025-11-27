@@ -9,7 +9,7 @@
     "api_proxy_url": "",                      // 企业微信API的自建反向代理地址，如 "https://wecom.example.com"
     "proxy_url": "",                          // 全局网络代理，如 "http://127.0.0.1:7890" 或 "socks5://127.0.0.1:1080"
     "use_env_proxy": false                    // 是否使用系统环境变量中的代理。建议在配置了 api_proxy_url 时关闭此选项
-  }，
+  },
 
   // --- Pansou 服务配置 ---
   // Pansou是一个网盘聚合搜索引擎，项目地址：https://github.com/fish2018/pansou
@@ -18,14 +18,14 @@
     "token": "YOUR_PANSOU_TOKEN",             // Pansou API的认证Token。可在Pansou后台 -> API -> 搜索API -> "Authorization Header" 中找到
     "default_limit": 5,                       // 默认返回的搜索结果数量，建议不超过6，避免消息过长被截断
     "request_timeout": 15                     // 请求Pansou API的超时时间（单位：秒）
-  }，
+  },
 
   // --- 额外功能开关 ---
   "features": {
     "enable_getbt": true,                     // 是否开启磁力之家的磁力搜索功能 (资源来源: https://www.1lou.pro/)
     "enable_get115": true,                    // 是否开启115网盘的资源搜索功能 (资源来源: https://nullbr.eu.org/)，需填写下面的 "oneonefive" 配置
     "enable_pianer": false                    // 是否开启片儿盘的磁力搜索功能 (资源来源: https://cilijia.net/)，请注意内容并酌情开启
-  }，
+  },
 
   // --- 115 网盘搜索API配置 ---
   // 仅在 "features.enable_get115" 为 true 时需要配置
