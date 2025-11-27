@@ -44,7 +44,7 @@
     "host": "0.0.0.0",                        // 应用监听的IP地址，"0.0.0.0" 表示监听所有网络接口
     "port": 18001,                            // 应用运行的端口，也是容器需要映射的内部端口
     "log_level": "INFO",                      // 日志级别, 可选值: "DEBUG", "INFO", "WARNING", "ERROR"
-    "default_types": "quark"                  // 默认搜索的网盘类型，多个用逗号分隔，如 "quark,aliyun"。
+    "default_types": "115"                  // 默认搜索的网盘类型，多个用逗号分隔，如 "quark,aliyun"。
                                               // 可选值: baidu, aliyun, quark, tianyi, uc, mobile, 115, pikpak, xunlei, 123, magnet, ed2k
   }
 }
