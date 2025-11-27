@@ -1,36 +1,50 @@
 {
-    "wecom": {
-      "corp_id": "wwxxxxxxxxxxxxxxxx",    // 企业微信的企业ID
-      "agent_id": 1000002,    // 企业微信的应用AgentID
-      "agent_secret": "YOUR_APP_SECRET",    // 企业微信的应用密钥
-      "token": "WEComCallbackToken",    // 企业微信的应用回调token
-      "encoding_aes_key": "Your43CharEncodingAESKey",    // 企业微信的应用回调aes key
-      "api_proxy_url": "",    // 企业微信的自建回调代理
-	  "proxy_url": "",     // 代理，形如 http://127.0.0.1:7890
-      "use_env_proxy": false  // 建议在配了 api_proxy_url 时关闭
-    },
-    "pansou": {
-      "base_url": "http://192.168.1.1:8888",    // 部署pansou，具体部署见https://github.com/fish2018/pansou，建议部署AUTH_TOKEN_EXPIRY参数设置为24000，让token长期有效
-      "token": "YOUR_PANSOU_TOKEN",    // pansou 的token，打开pansou后台，依次点击API-搜索API，复制"Authorization Header"下面框中的token值
-      "default_limit": 5,    //建议不要过大，避免内容截断
-      "request_timeout": 15
-    },
-    "features": {
-      "enable_getbt": true,    // 是否开启磁力之家的磁力爬取，资源内容详见https://www.1lou.pro/
-      "enable_get115": true,    // 是否开启nullbr 115网盘资源搜索，开启该选项要填写app_id和api_key，资源内容详见https://nullbr.eu.org/
-      "enable_pianer": false    // 是否开启磁力家的磁力爬取，该资源网站包含9KG，请酌情开启，资源内容详见https://cilijia.net/
-    },
-	"oneonefive": {
-      "app_id": "YOUR_115_APP_ID",    // nullbr的APP_ID，申请见https://nullbr.eu.org/
-      "api_key": "YOUR_115_API_KEY"    // nullbr的API_KEY，申请见https://nullbr.eu.org/
-    },
-    "magnet": {
-      "bt_workers": 4    // 根据机器性能变更，默认不动即可
-    },
-    "app": {
-      "host": "0.0.0.0",    // 默认不用变更
-      "port": 18001,    // 项目端口，也是容器内部端口
-      "log_level": "INFO",
-      "default_types": "quark"    // 默认搜索的类型，可填写baidu aliyun quark tianyi uc mobile 115 pikpak xunlei 123 magnet ed2k
-    }
+  // --- 企业微信应用配置 ---
+  "wecom": {
+    "corp_id": "wwxxxxxxxxxxxxxxxx",          // 企业微信的企业ID (CorpID)
+    "agent_id": 1000002,                      // 企业微信自建应用的AgentID
+    "agent_secret": "YOUR_APP_SECRET",        // 企业微信自建应用的密钥 (Secret)
+    "token": "WEComCallbackToken",            // 用于验证回调URL的Token，可自定义
+    "encoding_aes_key": "Your43CharEncodingAESKey", // 用于消息体加解密的AESKey，可自定义
+    "api_proxy_url": "",                      // 企业微信API的自建反向代理地址，如 "https://wecom.example.com"
+    "proxy_url": "",                          // 全局网络代理，如 "http://127.0.0.1:7890" 或 "socks5://127.0.0.1:1080"
+    "use_env_proxy": false                    // 是否使用系统环境变量中的代理。建议在配置了 api_proxy_url 时关闭此选项
+  }，
+
+  // --- Pansou 服务配置 ---
+  // Pansou是一个网盘聚合搜索引擎，项目地址：https://github.com/fish2018/pansou
+  "pansou": {
+    "base_url": "http://192.168.1.1:8888",    // 您自行部署的Pansou服务地址
+    "token": "YOUR_PANSOU_TOKEN",             // Pansou API的认证Token。可在Pansou后台 -> API -> 搜索API -> "Authorization Header" 中找到
+    "default_limit": 5,                       // 默认返回的搜索结果数量，建议不超过10，避免消息过长被截断
+    "request_timeout": 15                     // 请求Pansou API的超时时间（单位：秒）
+  }，
+
+  // --- 额外功能开关 ---
+  "features": {
+    "enable_getbt": true,                     // 是否开启磁力之家的磁力搜索功能 (资源来源: https://www.1lou.pro/)
+    "enable_get115": true,                    // 是否开启115网盘的资源搜索功能 (资源来源: https://nullbr.eu.org/)，需填写下面的 "oneonefive" 配置
+    "enable_pianer": false                    // 是否开启片儿盘的磁力搜索功能 (资源来源: https://cilijia.net/)，请注意内容并酌情开启
+  }，
+
+  // --- 115 网盘搜索API配置 ---
+  // 仅在 "features.enable_get115" 为 true 时需要配置
+  "oneonefive": {
+    "app_id": "YOUR_115_APP_ID",              // nullbr提供的APP_ID，申请地址: https://nullbr.eu.org/
+    "api_key": "YOUR_115_API_KEY"             // nullbr提供的API_KEY，申请地址: https://nullbr.eu.org/
+  },
+
+  // --- 磁力链接解析配置 ---
+  "magnet": {
+    "bt_workers": 4                           // 解析磁力链接详情的并发线程数，可根据服务器性能调整，通常无需更改
+  },
+  
+  // --- 应用本身配置 ---
+  "app": {
+    "host": "0.0.0.0",                        // 应用监听的IP地址，"0.0.0.0" 表示监听所有网络接口
+    "port": 18001,                            // 应用运行的端口，也是容器需要映射的内部端口
+    "log_level": "INFO",                      // 日志级别, 可选值: "DEBUG", "INFO", "WARNING", "ERROR"
+    "default_types": "quark"                  // 默认搜索的网盘类型，多个用逗号分隔，如 "quark,aliyun"。
+                                              // 可选值: baidu, aliyun, quark, tianyi, uc, mobile, 115, pikpak, xunlei, 123, magnet, ed2k
   }
+}
