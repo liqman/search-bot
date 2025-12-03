@@ -15,6 +15,8 @@
   // Pansou是一个网盘聚合搜索引擎，项目地址：https://github.com/fish2018/pansou
   "pansou": {
     "base_url": "http://192.168.1.1:8888",    // 您自行部署的Pansou服务地址
+    "username": "",                           // Pansou登录账号
+    "password": "",                           // Pansou登录密码，设置了账密，下面token可留空 
     "token": "YOUR_PANSOU_TOKEN",             // Pansou API的认证Token。可在Pansou后台 -> API -> 搜索API -> "Authorization Header" 中找到
     "default_limit": 5,                       // 默认返回的搜索结果数量，建议不超过6，避免消息过长被截断
     "request_timeout": 15                     // 请求Pansou API的超时时间（单位：秒）
