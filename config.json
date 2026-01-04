@@ -1,52 +1,38 @@
 {
-  // --- 企业微信应用配置 ---
   "wecom": {
-    "corp_id": "wwxxxxxxxxxxxxxxxx",          // 企业微信的企业ID (CorpID)
-    "agent_id": 1000002,                      // 企业微信自建应用的AgentID
-    "agent_secret": "YOUR_APP_SECRET",        // 企业微信自建应用的密钥 (Secret)
-    "token": "WEComCallbackToken",            // 用于验证回调URL的Token，可自定义
-    "encoding_aes_key": "Your43CharEncodingAESKey", // 用于消息体加解密的AESKey，可自定义
-    "api_proxy_url": "",                      // 企业微信API的自建反向代理地址，如 "https://wecom.example.com"
-    "proxy_url": "",                          // 全局网络代理，如 "http://127.0.0.1:7890" 或 "socks5://127.0.0.1:1080"
-    "use_env_proxy": false                    // 是否使用系统环境变量中的代理。建议在配置了 api_proxy_url 时关闭此选项
+    "corp_id": "wwxxxxxxxxxxxxxxxx",
+    "agent_id": 1000002,
+    "agent_secret": "YOUR_APP_SECRET",
+    "token": "WEComCallbackToken",
+    "encoding_aes_key": "Your43CharEncodingAESKey",
+    "api_proxy_url": "",
+    "proxy_url": "",
+    "use_env_proxy": false
   },
-
-  // --- Pansou 服务配置 ---
-  // Pansou是一个网盘聚合搜索引擎，项目地址：https://github.com/fish2018/pansou
   "pansou": {
-    "base_url": "http://192.168.1.1:8888",    // 您自行部署的Pansou服务地址
-    "username": "",                           // Pansou登录账号
-    "password": "",                           // Pansou登录密码，设置了账密，下面token可留空 
-    "token": "YOUR_PANSOU_TOKEN",             // Pansou API的认证Token。可在Pansou后台 -> API -> 搜索API -> "Authorization Header" 中找到
-    "default_limit": 5,                       // 默认返回的搜索结果数量，建议不超过6，避免消息过长被截断
-    "request_timeout": 15                     // 请求Pansou API的超时时间（单位：秒）
+    "base_url": "http://192.168.1.1:8888",
+    "username": "",
+    "password": "",
+    "token": "YOUR_PANSOU_TOKEN",
+    "default_limit": 5,
+    "request_timeout": 15
   },
-
-  // --- 额外功能开关 ---
   "features": {
-    "enable_getbt": true,                     // 是否开启磁力之家的磁力搜索功能 (资源来源: https://www.1lou.pro/)
-    "enable_get115": true,                    // 是否开启115网盘的资源搜索功能 (资源来源: https://nullbr.eu.org/)，需填写下面的 "oneonefive" 配置
-    "enable_pianer": false                    // 是否开启片儿盘的磁力搜索功能 (资源来源: https://cilijia.net/)，请注意内容并酌情开启
+    "enable_getbt": true,
+    "enable_get115": true,
+    "enable_pianer": false
   },
-
-  // --- 115 网盘搜索API配置 ---
-  // 仅在 "features.enable_get115" 为 true 时需要配置
   "oneonefive": {
-    "app_id": "YOUR_115_APP_ID",              // nullbr提供的APP_ID，申请地址: https://nullbr.eu.org/
-    "api_key": "YOUR_115_API_KEY"             // nullbr提供的API_KEY，申请地址: https://nullbr.eu.org/
+    "app_id": "YOUR_115_APP_ID",
+    "api_key": "YOUR_115_API_KEY"
   },
-
-  // --- 磁力链接解析配置 ---
   "magnet": {
-    "bt_workers": 4                           // 解析磁力链接详情的并发线程数，可根据服务器性能调整，通常无需更改
+    "bt_workers": 4
   },
-  
-  // --- 应用本身配置 ---
   "app": {
-    "host": "0.0.0.0",                        // 应用监听的IP地址，"0.0.0.0" 表示监听所有网络接口
-    "port": 18001,                            // 应用运行的端口，也是容器需要映射的内部端口
-    "log_level": "INFO",                      // 日志级别, 可选值: "DEBUG", "INFO", "WARNING", "ERROR"
-    "default_types": "115"                  // 默认搜索的网盘类型，多个用逗号分隔，如 "quark,aliyun"。
-                                              // 可选值: baidu, aliyun, quark, tianyi, uc, mobile, 115, pikpak, xunlei, 123, magnet, ed2k
+    "host": "0.0.0.0",
+    "port": 18001,
+    "log_level": "INFO",
+    "default_types": "115"
   }
 }
