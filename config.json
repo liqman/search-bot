@@ -26,6 +26,9 @@
     "app_id": "YOUR_115_APP_ID",
     "api_key": "YOUR_115_API_KEY"
   },
+  "pianer": {
+    "base_url": "http://daninas.ddnsfree.com:3333"
+  },
   "magnet": {
     "bt_workers": 4
   },
